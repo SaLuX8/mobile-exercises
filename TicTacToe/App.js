@@ -56,10 +56,10 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = this.state.xIsNext ? 'Next player: X':'Next player: O';
 
     return (
-      <View>
+      <View style={{alignItems: 'center'}}>
         <Text style={styles.status}>{status}</Text>
         <View style={styles.boardRow}>
           {this.renderSquare(0)}
@@ -104,22 +104,17 @@ class Game extends React.Component {
 const styles = StyleSheet.create({
   boardRow: {
     flexDirection: 'row',
-
-
   },
   status: {
+    
 
 
   },
   square: {
     backgroundColor: 'white',
-    marginRight: '-1px',
-
+    
     fontWeight: 'bold',
-
-    height: '34px',
-
-    padding: '0',
+    
     textAlign: 'center',
     width: '34px'
   }
