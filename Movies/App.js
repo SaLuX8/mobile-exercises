@@ -1,47 +1,21 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MovieListScreen from './MovieListScreen';
+import MovieDetailScreen from './MovieDetailScreen';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+const Stack = createStackNavigator();
 
-const App: () => React$Node = () => {
+function App() {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-            <Text>Hello React Native CLI!</Text>
-            <MoviesList/>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="MoviesList" component={MovieListScreen} />
+        <Stack.Screen name="MovieDetails" component={MovieDetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-
-class MoviesList extends React.Component {
-  render() {
-    return (
-      <Text>Test</Text>
-    )
-  }
 }
-
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-});
 
 export default App;
