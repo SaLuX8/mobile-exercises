@@ -13,26 +13,20 @@ export default function App() {
 class Square extends React.Component {
   constructor(props) {
     super(props);
-   
   }
-
 
   render() {
-
-
     return (
-      <Button
-
-        style={styles.square}
-        title={this.props.value}
-        onPress={() => {
-          this.props.onPress()
-        }}
-      />
+      <View style={styles.square}>
+        <Button
+          title={this.props.value}
+          onPress={() => {
+            this.props.onPress()
+          }}
+        />
+      </View>
     );
   }
-
-
 }
 
 class Board extends React.Component {
@@ -46,20 +40,28 @@ class Board extends React.Component {
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    squares[i] = this.state.xIsNext ? 'X':'O';
-    this.setState({ squares: squares, xIsNext:!this.state.xIsNext });
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({ squares: squares, xIsNext: !this.state.xIsNext });
   }
 
   renderSquare(i) {
-    return <Square value={this.state.squares[i]}
-      onPress={() => this.handleClick(i)} />;
+    return (
+    <Square 
+    value={this.state.squares[i]}
+    onPress={() => this.handleClick(i)} />
+    )
+  }
+
+  newGame(){
+    this.setState({ xIsNext:true });
+
   }
 
   render() {
-    const status = this.state.xIsNext ? 'Next player: X':'Next player: O';
+    const status = this.state.xIsNext ? 'Next player: X' : 'Next player: O';
 
     return (
-      <View style={{alignItems: 'center'}}>
+      <View style={{ alignItems: 'center' }}>
         <Text style={styles.status}>{status}</Text>
         <View style={styles.boardRow}>
           {this.renderSquare(0)}
@@ -76,6 +78,18 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </View>
+
+        <View style={styles.button}>
+        <Button
+          title='New Game'
+          color='green'
+          onPress={() => {
+            this.setState({squares: Array(9).fill(' '), xIsNext:true})
+          }}/>
+
+
+        </View>
+        
       </View>
     );
   }
@@ -99,24 +113,21 @@ class Game extends React.Component {
 
 // ========================================
 
-
-
 const styles = StyleSheet.create({
   boardRow: {
     flexDirection: 'row',
+
   },
   status: {
-    
-
-
+    marginTop: '10%'
   },
   square: {
-    backgroundColor: 'white',
-    
-    fontWeight: 'bold',
-    
-    textAlign: 'center',
-    width: '34px'
+    flex: 1,
+    justifyContent: "center",
+    padding: 1,
+    maxWidth: 40
+  },
+  button: {
+    marginTop: '2%'
   }
-
 });
