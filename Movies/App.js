@@ -1,21 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+} from 'react-native';
 
-export default function App() {
+import {
+  Colors,
+} from 'react-native/Libraries/NewAppScreen';
+
+const App: () => React$Node = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to sdssadsadadfasdtart working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+            <Text>Hello React Native CLI!</Text>
+            <MoviesList/>
+        </ScrollView>
+      </SafeAreaView>
+    </>
   );
+};
+
+class MoviesList extends React.Component {
+  render() {
+    return (
+      <Text>Test</Text>
+    )
+  }
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  scrollView: {
+    backgroundColor: Colors.lighter,
   },
 });
+
+export default App;
