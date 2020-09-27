@@ -3,11 +3,11 @@
 
 import React, { useState } from 'react';
 import Dialog from "react-native-dialog";
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Form, Input, Item, Modal } from 'native-base';
+import { Container, Header, Title, Button, Left, Right, Body, Text, Form, Input, Item } from 'native-base';
 import WeatherForecast from './WeatherForecast';
 import { ScrollView } from 'react-native';
 
-const MenuArea = () => {
+const MainApp = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [cityName, setCityName] = useState("");
     const [cities, setCities] = useState([]);
@@ -29,7 +29,6 @@ const MenuArea = () => {
         let filteredArray = cities.filter(city => city.id !== id);
         setCities(filteredArray);
       }
-
 
     return (
         <Container>
@@ -72,6 +71,6 @@ const MenuArea = () => {
     );
 
 };
-export default MenuArea;
+export default MainApp;
 
 

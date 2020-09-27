@@ -38,8 +38,8 @@
     "typescript": "^4.0.3"
   },
   "jest": {
-    "preset": "react-native",
-    "setupFiles": ["./path/to/jestSetupFile.js"]
+    "preset": "react-native"
+    
   }
 }
 

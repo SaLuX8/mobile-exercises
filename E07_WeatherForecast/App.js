@@ -25,11 +25,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import MenuArea from './MenuArea';
+import MainApp from './MainApp';
 
 const App: () => React$Node = () => {
   return (
-    <MenuArea />
+    <MainApp />
   );
 };
 
