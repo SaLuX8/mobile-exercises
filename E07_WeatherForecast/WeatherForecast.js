@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
-
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { View, Card, Text, CardItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Form, Input, Item, Modal } from 'native-base';
 
