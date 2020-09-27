@@ -6,7 +6,6 @@
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
 import AsyncStorage from '@react-native-community/async-storage';
-
 import { View, Card, Text, CardItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Form, Input, Item, Modal } from 'native-base';
 
 
@@ -24,10 +23,16 @@ const WeatherForecast = (params) => {
     //console.log('DATA: ' + data);
 
     const WindDirection = (props) => {
-        if (props >= 0 & props < 90) return 'NE';
-        if (props >= 90 & props <= 180) return 'SE';
-        if (props >= 180 & props <= 270) return 'SW';
-        if (props >= 270 & props <= 360) return 'NW';
+
+        if (props >= 340 & props <= 360) return 'North';
+        if (props >=  0 & props < 20) return 'North';
+        if (props >= 20 & props < 60) return 'North-East';
+        if (props >=  60 & props < 120) return 'East';
+        if (props >= 120 & props < 160) return 'South-East';
+        if (props >=  160 & props < 200) return 'South';
+        if (props >= 200 & props < 240) return 'South-West';
+        if (props >=  240 & props < 300) return 'West';
+        if (props >= 300 & props < 340) return 'North-West';
         else return 'null';
 
     };
@@ -49,15 +54,15 @@ const WeatherForecast = (params) => {
                     </Text>
                     <Text>Main: {data.weather[0].description}</Text>
                     <Text>Temp: {data.main.temp} °C (feels: {data.main.feels_like} °C)</Text>
-                    <Text>Windspeed: {data.wind.speed} m/s, from {WindDirection(data.wind.deg)}</Text>
+                    <Text>Windspeed: {data.wind.speed} m/s, from {WindDirection(data.wind.deg)} {data.wind.deg}°</Text>
 
-                    <View style={{ flexDirection: "row" }}>
-                        <View style={{ flex: 1 }}>
-                            <Text onPress={()=>deleteCity(data.id)}> - del -</Text>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <Text onPress={refreshForecast} style={{ textAlign: 'right', alignSelf: 'stretch' }}> - refresh -</Text>
-                        </View>
+                    <View style={{ flexDirection: "row", justifyContent:'space-between', alignItems:'stretch' }}>
+                        <Button style={{ flex: 0.8, justifyContent: 'center', marginRight: 60 }} small bordered danger>
+                            <Text onPress={()=>deleteCity(data.id)} > Delete</Text> 
+                        </Button>
+                        <Button style={{ flex: 0.8, justifyContent: 'center', marginLeft: 60 }} small bordered success>
+                            <Text onPress={refreshForecast}>refresh</Text>
+                        </Button>
                     </View>
                 </Body>
             </CardItem>
