@@ -5,7 +5,8 @@
 
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
-import AsyncStorage from '@react-native-community/async-storage';
+
+
 import { View, Card, Text, CardItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Form, Input, Item, Modal } from 'native-base';
 
 
@@ -14,7 +15,7 @@ const WeatherForecast = (params) => {
     const API_KEY = '1930b8d66da70f855beebfaead1b274f';
     const [{ data, loading, error }, refetch] = useAxios(
         'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + API_KEY
-    )
+    );
 
     if (loading) return <Text>Loading...</Text>;
     if (error) return <Text>Error!</Text>;
