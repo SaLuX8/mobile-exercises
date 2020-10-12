@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable quotes */
+
 import React, { Component, useCallback } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import YouTube from 'react-native-youtube';
@@ -49,6 +50,7 @@ export default class VideoPlayer extends Component {
       );
     }
   }
+  
   const styles = StyleSheet.create({
       container: {
           flex: 1,
