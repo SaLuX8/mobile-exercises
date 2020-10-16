@@ -7,6 +7,8 @@ import {
 } from 'react-native-admob'
 
 
+
+
 import React from 'react'
 import {
     Button,
@@ -30,7 +32,7 @@ const AdsMain = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
-            <Text>Testi</Text>
+                <Text>Testi</Text>
 
                 <AdMobBanner
                     adSize="banner"
@@ -39,13 +41,16 @@ const AdsMain = () => {
                     onAdFailedToLoad={error => console.error(error)}
                 />
 
-                <PublisherBanner
-                    adSize="fullBanner"
+                <AdMobBanner
+                    style={styles.adView}
+                    adSize="smartBannerLandscape"
                     adUnitID="ca-app-pub-3940256099942544/6300978111"
-                    testDevices={[PublisherBanner.simulatorId]}
-                    
-                    onAdFailedToLoad={error => console.error(error)}
-                    onAppEvent={event => console.log(event.name, event.info)}
+                    testDevices={[AdMobBanner.simulatorId]}
+                    onAdFailedToLoad={error => {
+                        console.log("ERRORS:");
+                        console.error(error)
+                    }
+                    }
                 />
 
 
