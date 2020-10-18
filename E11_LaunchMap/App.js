@@ -7,25 +7,41 @@ import {
   Text,
   TextInput,
   StatusBar,
+  Linking
 } from 'react-native';
 
 
 const App: () => React$Node = () => {
   const [latitude, setLatitude] = useState(0);
-  const [longigude, setLongitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
+
+  const launchMap = () => {
+    const location = `${latitude},${longitude}`
+    const label = 'custom label'
+    const url = Platform.select({
+      ios: `maps:${location}`,
+      android: `geo:${location}?center=${location}&q=${location}&z=6`,
+    });
+    Linking.openURL(url);
+  }
+  
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.area}>
         <Text>Give latitude value:</Text>
-        <TextInput placeholder='Latitude' />
+        <TextInput placeholder='Latitude' onChangeText={text=> setLatitude(text)}/>
         <Text>Give longitude value:</Text>
-        <TextInput placeholder='Longitude' />
-        <Button title="Launch a Map" />
+        <TextInput placeholder='Longitude' onChangeText={text=> setLongitude(text)}/>
+        <Button title="Launch a Map" onPress={launchMap} />
       </SafeAreaView>
     </>
   );
+  
 };
+
+
+
 
 const styles = StyleSheet.create({
   area: {
