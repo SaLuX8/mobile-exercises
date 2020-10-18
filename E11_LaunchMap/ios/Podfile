@@ -8,6 +8,8 @@ target 'E11_LaunchMap' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'E11_LaunchMapTests' do
     inherit! :complete
     # Pods for testing
