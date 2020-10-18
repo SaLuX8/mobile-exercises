@@ -27,7 +27,7 @@ import {
 import ToastExample from './ToastExample';
 
 const App: () => React$Node = () => {
-  ToastExample.show('Awesome', ToastExample.SHORT);
+  ToastExample.show('Sami JEE', ToastExample.LONG);
   return (
     <View>
     
