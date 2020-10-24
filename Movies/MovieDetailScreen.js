@@ -32,6 +32,7 @@ export default class MovieDetailScreen extends React.Component {
         this.setState({  details: data });
         // check console - a movie data should be visible there
         console.log('state: ' + this.state.details.genres);
+        
     }
 
      videoLinkHandler= (id) => {
