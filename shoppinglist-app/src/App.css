@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color:limegreen;
+  height: 800px;
 }
 
 .App-logo {
@@ -35,4 +37,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Button {
+  padding: 20px;
+}
+
+.cards {
+  padding:10px;
+  margin: 10px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(204, 230, 167);
+  background-color: rgb(149, 173, 115);
+ 
+  
 }
