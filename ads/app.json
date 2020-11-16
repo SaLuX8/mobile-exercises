@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "ads",
+    "slug": "ads",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511" 
+      },
+      "supportsTablet": true
+    },
+    "android": {
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713" 
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
