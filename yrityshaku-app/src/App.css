@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 30s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jumbotron {
+  box-shadow: 7px 7px 5px 0px rgba(41, 41, 41, 0.75);
+  margin-top: 30px;
+  font-weight: bold;
+  background-image: url("tausta.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: rgb(239, 242, 245);
+}
+
+.navbar {
+  box-shadow: 7px 7px 5px 0px rgba(41, 41, 41, 0.75);
+  
+}
+
+#nav a {
+  font-weight: 500;
+  font-size: larger;
+  color: azure;
+  margin: 0 9px;
+  text-shadow: 1.5px 1.5px rgba(61, 61, 61, 0.75);
+}
+
+#nav a:hover {
+  color: rgb(174, 216, 216);
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.form {
+  margin-left: 15px;
+  margin-bottom: 0px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 7px;
+}
+
+.form-p {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.navlink{
+color: #61dafb;
+text-decoration-style: none;
+}
+
+.navlink:hover{
+  text-decoration-style: none;
+}
+.link{
+  text-decoration-style: none;
+  color: azure;
+}
+
+
